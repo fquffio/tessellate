@@ -1,11 +1,7 @@
         <!-- Footer -->
             <section id="footer">
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                    {foreach $footerLinks as $link}<li><a target="_blank" href="{$link.url}" class="icon fa-{$link.customProperty.featuredIcon|default:'link'}" title="{$link.title}"><span class="label">{$link.title}</span></a>{/foreach}
                 </ul>
                 <div class="copyright">
                     <ul class="menu">

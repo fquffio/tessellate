@@ -1,8 +1,8 @@
-{$width = $width|round|default:4}{$width = max(4, min($width, 12))}
+{$width = max(4, min($width|round, 12))|default:12}
 {$poster = 0}{if !empty($object.relations.poster)}{$poster = 1}{/if}
 {$featured = 0}{if !$poster && !empty($object.customProperties.featuredIcon)}{$featured = 1}{/if}
-                            <div class="{$width}u{if $poster || $featured} featured{/if}" id="{$object.nickname}">
-                                <section>
+                            <div class="{$width}u{if $poster || $featured} featured{/if}">
+                                <section id="{$object.nickname}">
                                     {if $poster}<span class="feature-icon">{$beEmbedMedia->object($object.relations.poster.0, [
                                         'title' => $object.relations.poster.0.title|default:'',
                                         'presentation' => 'full'
