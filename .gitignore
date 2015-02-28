@@ -5,6 +5,7 @@
 /config/frontend.cfg.php
 
 # tmp
+/tmp/*
 /tmp/!empty
 
 # /webroot/
