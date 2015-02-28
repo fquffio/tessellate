@@ -32,9 +32,9 @@ Also, be sure to read [this article](http://docs.bedita.com/setup/if-something-g
 ## Contributing ##
 Issue reporting and pull requests are welcomed, as long as they meet the [coding standards](https://github.com/bedita/bedita/wiki/Coding-Styles).
 
-You can also fork this repository and redistribute your derivative work, as long as you give credits and you use the same license. For further details, see below.
+You can also fork this repository and redistribute your derivative work, as long as you give credits both to me and [HTML5 Up](http://html5up.net/). For further details, see below.
 
-## License [![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) ##
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+## License [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/) ##
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 Please, be sure to read the full [license](LICENSE.md) for further details.

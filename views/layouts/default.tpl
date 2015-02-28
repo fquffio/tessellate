@@ -3,6 +3,10 @@
     Tessellate by HTML5 UP
     html5up.net | @n33co
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+    BEdita porting by fquffio
+    http://me.fquff.io | https://github.com/fquffio/tessellate | @fquffio
+    Free for personal and commercial use under the CCA 4.0 license (http://creativecommons.org/licenses/by/4.0/)
 -->
 <html lang="{$currLang2}">
     <head>
@@ -14,9 +18,7 @@
         <title>{$beFront->title()}</title>
 
         <link rel="icon" href="{$html->webroot}favicon.ico">
-        {if $conf->version >= '3.5.2'}
-            {$beFront->metaWebApp($publication.title, ['default' => 'apple-touch-icon.png'], '#000')}
-        {/if}
+        {if $conf->version >= '3.5.2'}{$beFront->metaWebApp($publication.title, ['default' => 'apple-touch-icon.png'], '#000')}{/if}
 
         <!--[if lte IE 8]>{$html->script('../css/ie/html5shiv')}<![endif]-->
         {$html->script('jquery.min')}

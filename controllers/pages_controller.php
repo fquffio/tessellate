@@ -2,7 +2,7 @@
 
 class PagesController extends FrontendController
 {
-    public $helpers = array('BeFront');
+    public $helpers = array('BeFront', 'FqSet');
     public $uses = array() ;
 
     /**
@@ -12,6 +12,7 @@ class PagesController extends FrontendController
         $this->set('feedNames', $this->Section->feedsAvailable(Configure::read('frontendAreaId')));
         $this->set('fullTree', $this->loadSectionsTree(Configure::read('frontendAreaId'), true));
 
+        // Footer links.
         $links = $this->BeTree->getChildren(Configure::read('frontendAreaId'), null, array(
             'object_type_id' => Configure::read('objectTypes.link.id'),
         ));

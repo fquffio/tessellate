@@ -2,30 +2,27 @@
                 <header>
                     <div class="container">
                         <h2>{$section.title}</h2>
-                        <p>{$section.description}</p>
+                        {$section.description|default:''}
                     </div>
                 </header>
 
-                {$featured = 0}{$categories = ''}{foreach $section.Category|default:[] as $cat}{$categories = $categories|cat:' '|cat:$cat.name}{if $cat.name == 'featured'}{$featured = 1}{/if}{/foreach}
-
-                <div class="content dark{$categories}">
+                <div class="content dark {$fqSet->classicExtract($section.Category|default:[], '{n}.name')|implode:' '}">
                     <div class="container">
-                        {if !empty($section.relations.poster)}<span class="image featured">{$beEmbedMedia->object($section.relations.poster.0, [
-                            'title' => $section.relations.poster.0.title|default:'',
-                            'presentation' => 'full'
-                        ])}</span>{/if}
+                        {if !empty($section.relations.poster)}<span class="image featured">{$view->element('image', ['image' => $section.relations.poster.0])}</span>{/if}{* Poster *}
 
                         <div class="row">
-                            {foreach $section.objects|default:[] as $item}{$view->element('object', ['width' => 12 / count($section.objects), 'object' => $item])}{/foreach}
+                            {foreach $section.objects|default:[] as $item}{$view->element('object', ['width' => 12 / count($section.objects), 'object' => $item])}{/foreach}{* View objects *}
 
                         </div>
 
+{if !empty($section.relations.seealso)}{* Related contents link *}
                         <div class="row">
                             <div class="12u">
-                                {if !empty($section.relations.seealso)}{$view->element('internal_links', ['items' => $section.relations.seealso])}{/if}
+                                {$view->element('internal_links', ['items' => $section.relations.seealso])}
 
                             </div>
                         </div>
+{/if}
                     </div>
                 </div>
             </section>
