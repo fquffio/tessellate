@@ -1,0 +1,13 @@
+# /
+
+# config
+/config/core.php
+/config/frontend.cfg.php
+
+# tmp
+/tmp/!empty
+
+# /webroot/
+/webroot/test.php
+/webroot/index.php
+/webroot/files/!empty
