@@ -1,7 +1,7 @@
         <!-- Footer -->
             <section id="footer">
                 <ul class="icons">
-                    {foreach $footerLinks as $link}<li><a target="_blank" href="{$link.url}" class="icon fa-{$link.customProperty.featuredIcon|default:'link'}" title="{$link.title}"><span class="label">{$link.title}</span></a>{/foreach}
+                    {foreach $footerLinks as $link}<li><a target="_blank" href="{$link.url}" class="icon fa-{$link.customProperties.featuredIcon|default:'link'}" title="{$link.title}"><span class="label">{$link.title}</span></a>{/foreach}
 
                 </ul>
                 <div class="copyright">
