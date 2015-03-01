@@ -5,6 +5,7 @@
 
             </header>
 
+{if $contactMe|default:0}{$fullTree[] = ['title' => 'Contact me', 'nickname' => 'contact-me']}{/if}
             {if !empty($fullTree)}{$view->element('links', ['items' => $fullTree])}{/if}
 
         </section>

@@ -36,10 +36,13 @@
         {$beFront->feeds()}
     </head>
 
+{$contactMe = !empty($publication.email)}
     <body>
-        {$view->element('header')}
+        {$view->element('header', ['contactMe' => $contactMe])}
 
         {$content_for_layout}
+
+        {if $contactMe}{$view->element('contact_me')}{/if}
 
         {$view->element('footer')}
     </body>

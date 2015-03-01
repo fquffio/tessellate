@@ -36,4 +36,14 @@ class PagesController extends FrontendController
     public function homePage() {
         $this->render('home_page');
     }
+
+    public function contactMe() {
+        $recipient = $this->viewVars['publication']['email'];
+
+        if (!empty($recipient)) {
+            pr($this->data);exit;
+        }
+
+        $this->redirect($this->referer());
+    }
 }
