@@ -1,7 +1,7 @@
         <!-- Footer -->
             <section id="footer">
                 <ul class="icons">
-                    {foreach $footerLinks as $link}<li>{$icon = $link.customProperties.featuredIcon|default:'link'}{$view->element('link', [
+                    {foreach $footerLinks as $link}<li>{$link.object_type = 'Link'}{$icon = $link.customProperties.featuredIcon|default:'link'}{$view->element('link', [
                         'item' => $link,
                         'class' => 'icon fa-'|cat:$icon,
                         'text' => '<span class="label">'|cat:$link.title|cat:'</span>'
