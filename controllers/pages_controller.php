@@ -29,4 +29,11 @@ class PagesController extends FrontendController
         // Set view variables.
         $this->set(compact('feedNames', 'fullTree', 'footerLinks', 'galleriesIds'));
     }
+
+    /**
+     * BEdita <= 3.5.1 compatibility.
+     */
+    public function homePage() {
+        $this->render('home_page');
+    }
 }

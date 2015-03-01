@@ -2,8 +2,9 @@
 Just another responsive, awesome-looking BEdita frontend, based on the stunning *Tessellate* free HTML5 template from [HTML5 Up](http://html5up.net/).
 
 ## Requirements ##
-BEdita versions prior to 3.5.2 (which is still currently in pre-release) are not supported.
-You'll need to checkout branch `3-corylus` of [BEdita](https://github.com/bedita/bedita/tree/3-corylus) in order for this frontend to display correctly.
+BEdita versions prior to 3.5.1 (which is currently the latest version) are not supported. You can use this frontend at your own risk.
+
+You'll need to update to the latest stable version of [BEdita](https://github.com/bedita/bedita) in order for this frontend to display correctly.
 
 ## Setup ##
 1. Clone Tessellate frontend in your `frontends` folder:
