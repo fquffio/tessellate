@@ -5,6 +5,6 @@
 
             </header>
 
-            {if !empty($fullTree)}{$view->element('internal_links', ['items' => $fullTree])}{/if}
+            {if !empty($fullTree)}{$view->element('links', ['items' => $fullTree])}{/if}
 
         </section>

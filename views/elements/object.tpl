@@ -19,7 +19,7 @@
 
                                     {$object.body|default:''}
 
-                                    {if !empty($object.relations.seealso)}{$view->element('internal_links', ['items' => $object.relations.seealso])}{/if}
+                                    {if !empty($object.relations.seealso)}{$view->element('links', ['items' => $object.relations.seealso, 'noExternal' => $gallery])}{/if}
 
                                 </section>
                             </div>
@@ -30,7 +30,9 @@
 {if $image.object_type == 'Image'}
                                 {if $image@iteration % 2 == 1}<div class="row no-collapse">{/if}
 
-                                    <div class="6u">{$view->element('image', ['image' => $image, 'linkClass' => 'image fit', 'presentation' => 'thumb', 'link' => $image])}</div>
+{$linkId = $fqSet->extract('/.[switch=seealso]/object_id', $image.RelatedObject)}{$linkId = $linkId.0|default:''}
+{if !empty($linkId) && !empty($object.relations.seealso)}{$links = $fqSet->extract('/.[id='|cat:$linkId|cat:']', $object.relations.seealso)}{/if}
+                                    <div class="6u">{$view->element('image', ['image' => $image, 'linkClass' => 'image fit', 'presentation' => 'thumb', 'link' => $links.0|default:$image])}</div>
 
                                 {if $image@iteration % 2 == 0 || $image@last}</div>{/if}
 {/if}

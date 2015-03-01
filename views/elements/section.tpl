@@ -18,7 +18,7 @@
 {if !empty($section.relations.seealso)}{* Related contents link *}
                         <div class="row">
                             <div class="12u">
-                                {$view->element('internal_links', ['items' => $section.relations.seealso])}
+                                {$view->element('links', ['items' => $section.relations.seealso])}
 
                             </div>
                         </div>
