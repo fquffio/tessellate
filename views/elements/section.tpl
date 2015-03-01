@@ -6,12 +6,14 @@
                     </div>
                 </header>
 
+{if !empty($section.objects)}
                 <div class="content dark {$fqSet->classicExtract($section.Category|default:[], '{n}.name')|implode:' '}">
                     <div class="container">
                         {if !empty($section.relations.poster)}<span class="image featured">{$view->element('image', ['image' => $section.relations.poster.0])}</span>{/if}{* Poster *}
 
                         <div class="row">
-                            {foreach $section.objects|default:[] as $item}{$view->element('object', ['width' => 12 / count($section.objects), 'object' => $item])}{/foreach}{* View objects *}
+{$count = count($section.objects) - count($fqSet->extract('/.[object_type=Gallery]', $section.objects))}
+                            {foreach $section.objects|default:[] as $item}{$view->element('object', ['width' => 12 / $count|default:1, 'object' => $item])}{/foreach}{* View objects *}
 
                         </div>
 
@@ -25,4 +27,5 @@
 {/if}
                     </div>
                 </div>
+{/if}
             </section>
