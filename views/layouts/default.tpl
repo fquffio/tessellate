@@ -12,7 +12,6 @@
     <head>
         {$html->charset()}
         {$beFront->metaAll()}
-        {$beFront->metaDc()}
         {$beFront->metaOg()}
 
         <title>{$beFront->title()}</title>
