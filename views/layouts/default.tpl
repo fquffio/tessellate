@@ -11,7 +11,7 @@
 <html lang="{$currLang2}">
     <head>
         {$html->charset()}
-        {$beFront->metaAll()}
+        {$beFront->metaAll(true)}
         {$beFront->metaOg()}
 
         <title>{$beFront->title()}</title>
