@@ -31,6 +31,13 @@ include APP . 'config' . DS . 'mapping.cfg.php';
 ///////////////////////////////////////////////////
 
 /**
+ * Document type. Possible values are the same as `HtmlHelper::docType()`.
+ *
+ * @see http://api.cakephp.org/1.3/class-HtmlHelper.html#_docType
+ */
+$config['docType'] = 'html5';
+
+/**
  * Publication id referenced by frontend,
  * change if different from id = 1 (default)
  */
