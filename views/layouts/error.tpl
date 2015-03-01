@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$currLang2}">
+<html>
     <head>
         {$html->charset()}
 
