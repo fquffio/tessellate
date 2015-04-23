@@ -47,7 +47,7 @@
                             .find('input[type=text], textarea')
                             .each(function() {
                                 var e = $(this);
-                                if (e.val() == '' || e.val() == e.attr('placeholder')) {
+                                if (e.val() === '' || e.val() === e.attr('placeholder')) {
                                     e.addClass('formerize-placeholder');
                                     e.val(e.attr('placeholder'));
                                 }
@@ -57,7 +57,7 @@
                                 if (e.attr('name').match(/_fakeformerizefield$/)) {
                                     return;
                                 }
-                                if (e.val() == '') {
+                                if (e.val() === '') {
                                     e.addClass('formerize-placeholder');
                                     e.val(e.attr('placeholder'));
                                 }
@@ -67,7 +67,7 @@
                                 if (e.attr('name').match(/_fakeformerizefield$/)) {
                                     return;
                                 }
-                                if (e.val() == e.attr('placeholder')) {
+                                if (e.val() === e.attr('placeholder')) {
                                     e.removeClass('formerize-placeholder');
                                     e.val('');
                                 }
@@ -85,14 +85,14 @@
                                         .replace(/type="password"/i, 'type="text"')
                                         .replace(/type=password/i, 'type=text')
                                 );
-                                if (e.attr('id') != '') {
+                                if (e.attr('id') !== '') {
                                     x.attr('id', e.attr('id') + '_fakeformerizefield');
                                 }
-                                if (e.attr('name') != '') {
+                                if (e.attr('name') !== '') {
                                     x.attr('name', e.attr('name') + '_fakeformerizefield');
                                 }
                                 x.addClass('formerize-placeholder').val(x.attr('placeholder')).insertAfter(e);
-                                if (e.val() == '') {
+                                if (e.val() === '') {
                                     e.hide();
                                 } else {
                                     x.hide();
@@ -103,7 +103,7 @@
                                     var x = e
                                         .parent()
                                         .find('input[name=' + e.attr('name') + '_fakeformerizefield]');
-                                    if (e.val() == '') {
+                                    if (e.val() === '') {
                                         e.hide(); x.show();
                                     }
                                 });
@@ -125,11 +125,11 @@
                             .submit(function() {
                                 $(this)
                                     .find('input[type=text], input[type=password],textarea')
-                                    .each(function(event) {
+                                    .each(function() {
                                         var e = $(this);
                                         if (e.attr('name').match(/_fakeformerizefield$/))
                                             e.attr('name', '');
-                                        if (e.val() == e.attr('placeholder')) {
+                                        if (e.val() === e.attr('placeholder')) {
                                             e.removeClass('formerize-placeholder');
                                             e.val('');
                                         }
@@ -153,7 +153,7 @@
                                                 x = e
                                                     .parent()
                                                     .find('input[name=' + e.attr('name') + '_fakeformerizefield]');
-                                                if (e.val() == '') {
+                                                if (e.val() === '') {
                                                     e.hide();
                                                     x.show();
                                                 } else {
@@ -168,7 +168,7 @@
                                             case 'text':
                                             case 'textarea':
                                                 e.val(e.attr('defaultValue'));
-                                                if (e.val() == '') {
+                                                if (e.val() === '') {
                                                     e.addClass('formerize-placeholder');
                                                     e.val(e.attr('placeholder'));
                                                 }
@@ -179,7 +179,7 @@
                                         }
                                     });
                                 window.setTimeout(function() {
-                                    for (x in _fakes) {
+                                    for (var x in _fakes) {
                                         _fakes[x].trigger('formerize_sync');
                                     }
                                 }, 10);
