@@ -127,8 +127,9 @@
                                     .find('input[type=text], input[type=password],textarea')
                                     .each(function() {
                                         var e = $(this);
-                                        if (e.attr('name').match(/_fakeformerizefield$/))
+                                        if (e.attr('name').match(/_fakeformerizefield$/)) {
                                             e.attr('name', '');
+                                        }
                                         if (e.val() === e.attr('placeholder')) {
                                             e.removeClass('formerize-placeholder');
                                             e.val('');
