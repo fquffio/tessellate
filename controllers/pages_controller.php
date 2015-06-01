@@ -6,6 +6,18 @@ class PagesController extends FrontendController
     public $uses = array('Link');
 
     /**
+     * Initialization hooks.
+     */
+    public function __construct() {
+        // Remove unused Session component, and avoid troubles with cookies within the EU.
+        if (in_array('Session', $this->components)) {
+            unset($this->components[array_search('Session', $this->components)]);
+        }
+
+        parent::__construct();
+    }
+
+    /**
      * Load common data for all frontend pages
      */
     protected function beditaBeforeFilter() {
