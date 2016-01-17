@@ -6,7 +6,9 @@
 
 # tmp
 /tmp/*
-/tmp/!empty
+!/tmp/empty
+!/tmp/*/empty
+!/tmp/**/empty
 
 # /webroot/
 /webroot/test.php
